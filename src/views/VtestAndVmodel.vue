@@ -13,6 +13,8 @@ export default{
             lazyText:"",
             numberText:"",
             trimText:"",
+            checkboxText:[],
+            radioText:""
 
         }
     }
@@ -59,6 +61,14 @@ export default{
     <input type="trim" v-model.trim="trimText">
     <p>{{ this.trimText }}</p>
     <br>
+
+    <!-- checkbox 複選 -->
+    <label for="">早餐</label>
+    <input type="checkbox" v-model="checkboxText" name="mael" value="breakfast">
+    <label for="">午餐</label>
+    <input type="checkbox" v-model="checkboxText" name="mael" value="lunch">
+    <h3>{{ this.checkboxText }}</h3>
+    <!-- radio 單選 -->
 
 </template>
 
