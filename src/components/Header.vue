@@ -14,8 +14,11 @@ export default{
 
 <template>
     <div class="headerShow">
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/VtestAndVmodel">VtestAndVmodel</RouterLink>
+        <RouterLink to="/" class="routerItem">Home</RouterLink>
+        <RouterLink to="/VtestAndVmodel" class="routerItem">VtestAndVmodel</RouterLink>
+        <RouterLink to="/Vfor" class="routerItem">Vfor</RouterLink>
+        <RouterLink to="/Von" class="routerItem">Von</RouterLink>
+        <RouterLink to="/Three" class="routerItem">切版</RouterLink>
     </div>
 </template>
 
@@ -24,5 +27,12 @@ export default{
     width: 100%;
     height: 100%;
     background-color: #7e22ce;
+}
+
+.routerItem{
+    color: #fecaca;
+    font-size: 24pt;
+    text-decoration: none;
+    margin-left: 20px;
 }
 </style>

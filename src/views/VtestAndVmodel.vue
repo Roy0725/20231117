@@ -63,13 +63,25 @@ export default{
     <br>
 
     <!-- checkbox 複選 -->
+    
     <label for="">早餐</label>
     <input type="checkbox" v-model="checkboxText" name="mael" value="breakfast">
     <label for="">午餐</label>
     <input type="checkbox" v-model="checkboxText" name="mael" value="lunch">
+    <label for="">晚餐</label>
+    <input type="checkbox" v-model="checkboxText" name="mael" value="dinner">
     <h3>{{ this.checkboxText }}</h3>
+
     <!-- radio 單選 -->
 
+    <label for="">早餐</label>
+    <input type="radio" value="早餐" v-model="radioText" name="food">
+    <label for="">午餐</label>
+    <input type="radio" value="午餐" v-model="radioText" name="food">
+    <label for="">晚餐</label>
+    <input type="radio" value="晚餐" v-model="radioText" name="food">
+
+    <p>{{ this.radioText }}</p>
 </template>
 
 <style scoped lang="scss">
