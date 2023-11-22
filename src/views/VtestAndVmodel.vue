@@ -1,4 +1,6 @@
 <script>
+import {mapState, mapActions} from 'pinia'
+import counter from '../stores/counter'
 export default{
     data(){
         return{
@@ -17,10 +19,16 @@ export default{
             radioText:""
 
         }
+    },
+    methods:{
+        ...mapActions(counter,["getLocation","setLocation","getWeather"])
     }
 }
 </script>
 <template>
+    <button type="button" @click="getLocation">BTN1</button>
+    <button type="button" @click="setLocation(2)">BTN2</button>
+    <button type="button" @click="getWeather">weather</button>
     <h1>{{ this.title }}</h1>
 <!-- V-text -->
 <h2>V-text</h2>

@@ -64,7 +64,7 @@ export default{
         width: 75vw;
         height: 100%;
         .head{
-        margin-left: 10%;
+        margin-left: 15%;
         display: flex;
         width: 75vw;
         height: 10%;
