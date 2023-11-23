@@ -2,7 +2,8 @@
 export default{
     data(){
         return{
-            title:""
+            title:"",
+            text:""
         }
     },
     methods:{

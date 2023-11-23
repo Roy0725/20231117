@@ -31,6 +31,11 @@ const router = createRouter({
       path:'/Three',
       name:'Three',
       component: () => import('../views/Practice/Three.vue')
+    },
+    {
+      path:'/Vbind',
+      name:'Vbind',
+      component: () => import('../views/Vbind.vue')
     }
   ]
 })

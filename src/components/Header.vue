@@ -12,18 +12,22 @@ export default{
         RouterLink,
     },
     computed:{
-        ...mapState(counter,["location","locationInfo"])
+        ...mapState(counter,["location","locationInfo","weatherInfo"])
+    },
+    methods:{
+        ...mapActions(counter,["getWeather"])
     }
 }
 </script>
 
 <template>
     <div class="headerShow">
-        <RouterLink to="/" class="routerItem">Home</RouterLink>
-        <RouterLink to="/VtestAndVmodel" class="routerItem">VtestAndVmodel</RouterLink>
+        <RouterLink to="/" class="routerItem" :class="{'cass':this.location === 1}">Home</RouterLink>
+        <RouterLink to="/VtestAndVmodel" class="routerItem" :class="{'cass':this.location === 2}">VtestAndVmodel</RouterLink>
         <RouterLink to="/Vfor" class="routerItem">Vfor</RouterLink>
         <RouterLink to="/Von" class="routerItem">Von</RouterLink>
         <RouterLink to="/Three" class="routerItem">切版</RouterLink>
+        <RouterLink to="/Vbind" class="routerItem">Vbind</RouterLink>
 
     </div>
     <span>{{ location }}</span>
@@ -42,5 +46,10 @@ export default{
     font-size: 24pt;
     text-decoration: none;
     margin-left: 20px;
+}
+
+.cass{
+    background-color: #0c4a6e;
+    color: whitesmoke;
 }
 </style>

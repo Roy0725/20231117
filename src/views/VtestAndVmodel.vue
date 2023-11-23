@@ -22,6 +22,9 @@ export default{
     },
     methods:{
         ...mapActions(counter,["getLocation","setLocation","getWeather"])
+    },
+    mounted(){
+        this.setLocation(2)
     }
 }
 </script>
@@ -65,7 +68,7 @@ export default{
     <p>{{ this.numberText }}</p>
     <br>
 
-<span>v-model.number</span>
+<span>v-model.trim</span>
     <input type="trim" v-model.trim="trimText">
     <p>{{ this.trimText }}</p>
     <br>
