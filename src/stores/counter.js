@@ -5,7 +5,7 @@ export default defineStore("counter",{
     state(){
         return{
             location: 1,
-            weather:{},
+            weatherInfo:{},
         }
     },
 //  computed    回傳暫存值
@@ -29,9 +29,9 @@ export default defineStore("counter",{
             fetch("https://opendata.cwa.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWA-B7070E8B-49A1-438D-85DF-B7D00408F354")
                 .then((response) => response.json())
                 .then((data) => {
-                    this.weather = data
-                    console.log(this.weatherInfo);
-                })
+                    // this.weatherInfo = data;
+                    // console.log(weatherInfo);
+                });
         }
     }
 })

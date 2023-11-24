@@ -36,7 +36,12 @@ const router = createRouter({
       path:'/Vbind',
       name:'Vbind',
       component: () => import('../views/Vbind.vue')
-    }
+    },
+    {
+      path:'/VifAndVshow',
+      name:'VifAndVshow',
+      component: () => import('../views/VifAndVshow.vue')
+    },
   ]
 })
 

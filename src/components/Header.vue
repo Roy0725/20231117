@@ -28,10 +28,12 @@ export default{
         <RouterLink to="/Von" class="routerItem">Von</RouterLink>
         <RouterLink to="/Three" class="routerItem">切版</RouterLink>
         <RouterLink to="/Vbind" class="routerItem">Vbind</RouterLink>
+        <RouterLink to="/VifAndVshow" class="routerItem">VifAndVshow</RouterLink>
 
     </div>
     <span>{{ location }}</span>
     <span>{{ locationInfo }}</span>
+    <!-- <span>{{ weatherInfo }}</span> -->
 </template>
 
 <style scoped lang="scss">
