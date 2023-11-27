@@ -1,5 +1,19 @@
-<script setup>
+<script>
+import {mapState, mapActions} from 'pinia'
+import counter from "../stores/counter"
+export default{
+    data(){
+        return{
 
+        }
+    },
+    // methods:{
+    //     ...mapActions(counter,["location","locationInfo"])
+    // },
+    // mounted(){
+    //     this.setLocation(1)
+    // },
+}
 </script>
 
 <template>

@@ -21,7 +21,10 @@ export default{
         goOtherWay(){
             this.$router.push('/Vfor')
         }
-    }
+    },
+    // mounted(){
+    //     this.setLocation(4)
+    // }
 }   
 </script>
 

@@ -42,6 +42,11 @@ const router = createRouter({
       name:'VifAndVshow',
       component: () => import('../views/VifAndVshow.vue')
     },
+    {
+      path:'/WatchAndComputed',
+      name:'WatchAndComputed',
+      component: () => import('../views/WatchAndComputed.vue')
+    },
   ]
 })
 

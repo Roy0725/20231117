@@ -29,6 +29,7 @@ export default{
         <RouterLink to="/Three" class="routerItem">切版</RouterLink>
         <RouterLink to="/Vbind" class="routerItem">Vbind</RouterLink>
         <RouterLink to="/VifAndVshow" class="routerItem">VifAndVshow</RouterLink>
+        <RouterLink to="/WatchAndComputed" class="routerItem">WatchAndComputed</RouterLink>
 
     </div>
     <span>{{ location }}</span>

@@ -5,7 +5,7 @@ export default defineStore("counter",{
     state(){
         return{
             location: 1,
-            weatherInfo:{},
+            // weatherInfo:{},  
         }
     },
 //  computed    回傳暫存值
@@ -13,9 +13,9 @@ export default defineStore("counter",{
         locationInfo(){
             return `現在位置: ${this.location}`
         },
-        weatherInfo(){
-            return `現在位置: ${this.weather}`
-        }
+        // weatherInfo(){
+        //     return `現在位置: ${this.weather}`
+        // }
     },
 //  methods
     actions:{
