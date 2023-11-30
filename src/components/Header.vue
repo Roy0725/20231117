@@ -32,8 +32,8 @@ export default{
         <RouterLink to="/WatchAndComputed" class="routerItem">WatchAndComputed</RouterLink>
 
     </div>
-    <span>{{ location }}</span>
-    <span>{{ locationInfo }}</span>
+        <!-- <span>{{ location }}</span>
+        <span>{{ locationInfo }}</span> -->
     <!-- <span>{{ weatherInfo }}</span> -->
 </template>
 

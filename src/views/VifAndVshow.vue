@@ -48,9 +48,9 @@ export default{
         <option value="2">2</option>
     </select>
 
-    <p v-if="horse == 1">白馬</p>
+    <p v-if="horse == 1">有馬加奈</p>
 
-    <p v-if="horse == 2">黑馬</p>
+    <p v-if="horse == 2">有馬加航</p>
     <p v-else>無馬</p>
 
     <h1>v-if & v-else-if & v-else</h1>
@@ -61,8 +61,8 @@ export default{
         <option value="2">2</option>
     </select>
 
-    <p v-if="horse2 == 1">白馬</p>  
-    <p v-else-if="horse2 == 2">黑馬</p>
+    <p v-if="horse2 == 1">有馬加奈</p>  
+    <p v-else-if="horse2 == 2">有馬加航</p>
     <p v-else>無馬</p>
 
 

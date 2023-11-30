@@ -22,7 +22,7 @@ export default{
     },
     methods:{
         ...mapActions(counter,["setLocation"]),
-        clickPoint(){
+        clickPoint(){　
             this.point += 1;
         }
     },//vue檔建立但事件、變數、屬性等等尚未建立
