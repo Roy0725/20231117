@@ -18,7 +18,7 @@ export default{
         }
     },
     mounted(){
-        this.setLocation(7)
+        this.setLocation(6)
     },
     
 

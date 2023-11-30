@@ -1,4 +1,6 @@
 <script>
+import {mapState, mapActions} from 'pinia'
+import counter from '../stores/counter'
 export default{
     data(){
         return{
@@ -23,9 +25,12 @@ export default{
             arr3:[1,2,3,4,5,6,7,8,9,10]
         }
     },
-    // mounted(){
-    //     this.setLocation(3)
-    // }
+    methods:{
+        ...mapActions(counter,["setLocation"])
+    },
+    mounted(){
+        this.setLocation(3)
+    }
 }
 </script>
 

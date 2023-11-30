@@ -7,12 +7,12 @@ export default{
 
         }
     },
-    // methods:{
-    //     ...mapActions(counter,["location","locationInfo"])
-    // },
-    // mounted(){
-    //     this.setLocation(1)
-    // },
+    methods:{
+        ...mapActions(counter,["setLocation"])
+    },
+    mounted(){
+        this.setLocation(1)
+    },
 }
 </script>
 

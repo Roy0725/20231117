@@ -47,6 +47,27 @@ const router = createRouter({
       name:'WatchAndComputed',
       component: () => import('../views/WatchAndComputed.vue')
     },
+    {
+      path:'/Props',
+      name:'Props',
+      component: () => import('../views/Props.vue')
+    },
+    {
+      path:'/Accounting',
+      name:'Accounting',
+      component: () => import('../views/Practice/Accounting.vue')
+    },
+    {
+      path:'/SignUp',
+      name:'SignUp',
+      component: () => import('../views/Practice/SignUp.vue')
+    },
+    {
+      path:'/Interface',
+      name:'Interface',
+      component: () => import('../views/Practice/Interface.vue')
+    },
+    
   ]
 })
 

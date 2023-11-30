@@ -22,7 +22,7 @@ export default{
     },
     methods:{
         ...mapActions(counter,["setLocation"]),
-        clickPoint(){　
+        clickPoint(){
             this.point += 1;
         }
     },//vue檔建立但事件、變數、屬性等等尚未建立
@@ -36,7 +36,7 @@ export default{
         console.log("beforeMount");
     },// DOM Tree已連接
     mounted(){
-        this.setLocation(8)
+        this.setLocation(7)
     }, //變數已更動但畫面未更新 
     beforeUpdate(){
         console.log("beforeUpdate");

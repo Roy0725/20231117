@@ -1,4 +1,6 @@
 <script>
+import { mapActions } from 'pinia';
+import counter from '../stores/counter';
 export default{
     data(){
         return{
@@ -22,9 +24,12 @@ export default{
             this.$router.push('/Vfor')
         }
     },
-    // mounted(){
-    //     this.setLocation(4)
-    // }
+    methods:{
+        ...mapActions(counter,["setLocation"])
+    },
+    mounted(){
+        this.setLocation(4)
+    }
 }   
 </script>
 

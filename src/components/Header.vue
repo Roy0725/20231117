@@ -24,12 +24,14 @@ export default{
     <div class="headerShow">
         <RouterLink to="/" class="routerItem" :class="{'cass':this.location === 1}">Home</RouterLink>
         <RouterLink to="/VtestAndVmodel" class="routerItem" :class="{'cass':this.location === 2}">VtestAndVmodel</RouterLink>
-        <RouterLink to="/Vfor" class="routerItem">Vfor</RouterLink>
-        <RouterLink to="/Von" class="routerItem">Von</RouterLink>
+        <RouterLink to="/Vfor" class="routerItem" :class="{'cass':this.location === 3}">Vfor</RouterLink>
+        <RouterLink to="/Von" class="routerItem" :class="{'cass':this.location === 4}">Von</RouterLink>
+        <RouterLink to="/Vbind" class="routerItem" :class="{'cass':this.location === 5}">Vbind</RouterLink>
+        <RouterLink to="/VifAndVshow" class="routerItem" :class="{'cass':this.location === 6}">VifAndVshow</RouterLink>
+        <RouterLink to="/WatchAndComputed" class="routerItem" :class="{'cass':this.location === 7}">WatchAndComputed</RouterLink>
+        <RouterLink to="/Props" class="routerItem" :class="{'cass':this.location === 8}">Props</RouterLink>
         <RouterLink to="/Three" class="routerItem">切版</RouterLink>
-        <RouterLink to="/Vbind" class="routerItem">Vbind</RouterLink>
-        <RouterLink to="/VifAndVshow" class="routerItem">VifAndVshow</RouterLink>
-        <RouterLink to="/WatchAndComputed" class="routerItem">WatchAndComputed</RouterLink>
+        <RouterLink to="/Accounting" class="routerItem">記帳</RouterLink>
 
     </div>
         <!-- <span>{{ location }}</span>
@@ -54,5 +56,6 @@ export default{
 .cass{
     background-color: #0c4a6e;
     color: whitesmoke;
+    border-radius: 5px;
 }
 </style>
