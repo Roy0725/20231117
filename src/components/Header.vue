@@ -30,6 +30,7 @@ export default{
         <RouterLink to="/VifAndVshow" class="routerItem" :class="{'cass':this.location === 6}">VifAndVshow</RouterLink>
         <RouterLink to="/WatchAndComputed" class="routerItem" :class="{'cass':this.location === 7}">WatchAndComputed</RouterLink>
         <RouterLink to="/Props" class="routerItem" :class="{'cass':this.location === 8}">Props</RouterLink>
+        <RouterLink to="/Emit" class="routerItem" :class="{'cass':this.location === 9}">Emit</RouterLink>
         <RouterLink to="/Three" class="routerItem">切版</RouterLink>
         <RouterLink to="/Accounting" class="routerItem">記帳</RouterLink>
 

@@ -53,6 +53,11 @@ const router = createRouter({
       component: () => import('../views/Props.vue')
     },
     {
+      path:'/Emit',
+      name:'Emit',
+      component: () => import('../views/Emit.vue')
+    },
+    {
       path:'/Accounting',
       name:'Accounting',
       component: () => import('../views/Practice/Accounting.vue')
