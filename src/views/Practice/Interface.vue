@@ -77,7 +77,7 @@ export default{
     <div class="left">
         <h1>Expense Tracker</h1>
         <h2>Your Balance</h2>
-        <p id="total">$ {{totalIncome - totalExpense}}</p>
+        <p id="total" :class="{ 'positive': totalIncome - totalExpense > 0, 'negative': totalIncome - totalExpense < 0 }">$ {{totalIncome - totalExpense}}</p>
     </div>
     <div class="right">
         <div class="earn">
@@ -95,7 +95,7 @@ export default{
             <input type="text" v-model="description" id="description" placeholder="請輸入項目">
 
             <label for="">金額 :</label>
-            <input type="text" v-model="amount" id="amount" placeholder="請輸入金額">
+            <input type="number" v-model="amount" id="amount" placeholder="請輸入金額">
 
             <div class="option">
                 <label for="">類型</label>
@@ -130,9 +130,15 @@ export default{
     display: flex;
     .left{
         width: 28vw;
-        height: 100%;
+        height: 100vh;
         background-color:#818cf8;
         position: relative;
+        .positive{
+            color: green;
+        }
+        .negative{
+            color: red;
+        }
         h1{
             color: white;
             position: absolute;
@@ -201,6 +207,7 @@ export default{
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            z-index: 1;
             input{
                 margin-top: 50px;
                 border-radius: 5px;
@@ -234,6 +241,7 @@ export default{
                 border-radius: 5px;
                 background-color: #e2e8f0;
                 box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+                padding: 5px;
                 
                 .details{
                     margin-left: 10px;
@@ -245,11 +253,8 @@ export default{
                     border: none;
                     cursor: pointer;
                     font-size: 20pt;
-                    // margin-top:10px ;
                     transition: opacity 0.3s ease;
-                    // position: absolute;
-                    // top: 0;
-                    // left: 0;
+                    
                 }
                 .delete-btn:hover{
                     content: "";

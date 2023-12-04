@@ -3,12 +3,38 @@ export default{
     data(){
         return{
             open:false,
-
+            username:"",
+            password:"",
+            secondPassword:"",
+            passwordMatch:false,
+            
         }
     },
     methods:{
         goAccounting(){
             this.$router.push('/Accounting')
+        },
+        register() {
+            // 檢查兩次密碼是否相符
+            if (this.password === this.secondPassword) {
+        // 模擬將帳號密碼存儲到本地存儲空間
+                // localStorage.setItem("username", this.username);
+                // localStorage.setItem("password", this.password);
+                const data = {
+                        username: this.username,
+                        password: this.password,
+                    }
+                    const registrations = JSON.parse(localStorage.getItem("registrations")) || [];
+                    registrations.push(data);
+                    localStorage.setItem("registrations", JSON.stringify(registrations));
+
+                this.passwordMatch = false; // 重置錯誤狀態
+                alert("註冊成功!");
+                this.$router.push('/Accounting')
+            } else {
+                    this.passwordMatch = true;
+                    alert("密碼不符")
+            }
         },
     },
 }
@@ -19,16 +45,19 @@ export default{
     <div class="title">
     <h1>Expense Tracker</h1>
 </div>
-<div class="enter">
-        <label for="">Account</label>
-        <input type="text" placeholder="Placeholder/input text"> 
-        <label for="">Password</label>
-        <input type="text" placeholder="Placeholder/input text">
-        <label for="">Repeat Password</label>
-        <input type="text" placeholder="Placeholder/input text">
-</div>
-    <button type="button" @click="goAccounting">Cancel</button>
-    <button type="button" @click="goAccounting">Sign Up</button>
+<form @submit.prevent="register">
+    <div class="enter">
+        <label for="username">Account</label>
+        <input type="text" v-model="username" required placeholder="Placeholder/input text"> 
+        <label for="password">Password</label>
+        <input type="password" v-model="password" required placeholder="Placeholder/input text">
+        <label for="secondPassword">Repeat Password</label>
+        <input type="password" v-model="secondPassword" required placeholder="Placeholder/input text">
+    </div>
+        <button type="button" @click="goAccounting">Cancel</button>
+
+        <button type="submit">Sign Up</button>
+</form>
 </div>
 </template>
 

@@ -58,6 +58,11 @@ const router = createRouter({
       component: () => import('../views/Emit.vue')
     },
     {
+      path:'/DataFlow',
+      name:'DataFlow',
+      component: () => import('../views/DataFlow.vue')
+    },
+    {
       path:'/Accounting',
       name:'Accounting',
       component: () => import('../views/Practice/Accounting.vue')

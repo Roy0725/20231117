@@ -3,15 +3,30 @@ export default{
     data(){
         return{
             open:false,
-
+            username:"",
+            password:"",
+            loginErr:false,
         }
     },
     methods:{
         goSignUp(){
             this.$router.push('/SignUp')
         },
-        goInterface(){
-            this.$router.push('/Interface')
+        // goInterface(){
+        //     this.$router.push('/Interface')
+        // },
+        login(){
+            const registrations = JSON.parse(localStorage.getItem("registrations")) || [];
+
+            const match = registrations.find((registration) =>
+            registration.username === this.username && registration.password === this.password);
+            if (match) {
+                this.loginErr = ""; // 登入成功
+                alert("登入成功!");
+                this.$router.push('/Interface')
+            } else {
+                alert("無效的帳號或密碼")
+            }
         }
     },
     components:{
@@ -25,14 +40,16 @@ export default{
     <div class="title">
     <h1>Expense Tracker</h1>
 </div>
-<div class="enter">
-        <label for="">Account</label>
-        <input type="text" required placeholder="Placeholder/input text"> 
-        <label for="">Password</label>
-        <input type="text" required placeholder="Placeholder/input text">
-</div>
-    <button type="button" @click="goSignUp()">Sign Up</button>
-    <button type="button" @click="goInterface()">Log In</button>
+<form @submit.prevent="login">
+        <div class="enter">
+            <label for="username">Account</label>
+            <input type="text" v-model="username" required placeholder="Placeholder/input text"> 
+            <label for="password">Password</label>
+            <input type="password" v-model="password" required placeholder="Placeholder/input text">
+        </div>
+        <button type="button" @click="goSignUp()">Sign Up</button>
+        <button type="submit">Log In</button>
+</form>
 </div>
 </template>
 

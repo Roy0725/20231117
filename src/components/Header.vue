@@ -31,19 +31,20 @@ export default{
         <RouterLink to="/WatchAndComputed" class="routerItem" :class="{'cass':this.location === 7}">WatchAndComputed</RouterLink>
         <RouterLink to="/Props" class="routerItem" :class="{'cass':this.location === 8}">Props</RouterLink>
         <RouterLink to="/Emit" class="routerItem" :class="{'cass':this.location === 9}">Emit</RouterLink>
+        <RouterLink to="/DataFlow" class="routerItem" :class="{'cass':this.location === 10}">DataFlow</RouterLink>
         <RouterLink to="/Three" class="routerItem">切版</RouterLink>
         <RouterLink to="/Accounting" class="routerItem">記帳</RouterLink>
 
     </div>
-        <!-- <span>{{ location }}</span>
-        <span>{{ locationInfo }}</span> -->
-    <!-- <span>{{ weatherInfo }}</span> -->
+    <!-- <span>{{ location }}</span>
+    <span>{{ locationInfo }}</span> -->
+<!-- <span>{{ weatherInfo }}</span> -->
 </template>
 
 <style scoped lang="scss">
 .headerShow{
     width: 100%;
-    height: 100%;
+    // height: 100%;
     background-color: #7e22ce;
 }
 
