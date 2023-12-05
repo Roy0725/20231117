@@ -17,9 +17,7 @@ export default{
         register() {
             // 檢查兩次密碼是否相符
             if (this.password === this.secondPassword) {
-        // 模擬將帳號密碼存儲到本地存儲空間
-                // localStorage.setItem("username", this.username);
-                // localStorage.setItem("password", this.password);
+            // 模擬將帳號密碼存儲到本地存儲空間
                 const data = {
                         username: this.username,
                         password: this.password,

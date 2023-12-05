@@ -8,7 +8,7 @@ export default{
     data(){
         return{
             objInfo:{},
-            change:true,
+            change:false,
         }
     },
     methods:{
@@ -20,7 +20,7 @@ export default{
             this.change = !this.change
         },
         chanPage(){
-            this.chanPage = !this.change
+            this.change = !this.change
         }
     },
     mounted(){
@@ -39,8 +39,8 @@ export default{
     <h3>change:{{ this.change }}</h3>
 
     <div class="showArea">
-        <flowChild @get="getInfo" v-show="this.change == true"/>
-        <flowChild2  v-show="this.change == true"/>
+        <flowChild @get="getInfo" v-show="this.change == false"/>
+        <flowChild2 v-bind="this.objInfo" v-show="this.change == true" @back="this.chanPage()"/>
     </div>
 </template>
 

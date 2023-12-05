@@ -2,8 +2,11 @@
 @import './stylesheet/variables';
 @import '../../node_modules/bootstrap/scss/bootstrap.scss';
 
+
 body{
     margin: 0;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    // overflow-y: scroll;
+    // overflow-x: hidden;
 }
 

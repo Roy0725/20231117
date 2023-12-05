@@ -2,7 +2,13 @@
 export default{
     data(){
         return{
-            obj:{}
+            obj:{
+                name:"",
+                phone:"",
+                sex:"",
+                address:"",
+                age:"",
+            }
         }
     },
     methods:{
@@ -17,28 +23,29 @@ export default{
 <template>
 <div class="childArea">
     <h2>Child這邊輸入資料</h2>
+    <!-- <h3>{{ this.obj }}</h3> -->
 
     <form action="">
         <label for="">姓名 : </label>
-        <input type="text" >
+        <input type="text" v-model="this.obj.name">
 
         <label for="">手機 : </label>
-        <input type="number" >
+        <input type="number" v-model="this.obj.phone">
 
         <div class="sex">
             <label for="">性別 : </label>
-            <input type="radio" value="male" name="contact">
+            <input type="radio" value="male" name="contact" v-model="this.obj.sex">
             <label for="sex">男</label>
-            <input type="radio" value="female" name="contact">
+            <input type="radio" value="female" name="contact" v-model="this.obj.sex">
             <label for="sex">女</label>
         </div>
         <label for="">地址 : </label>
-        <input type="text" >
+        <input type="text" v-model="this.obj.address">
 
         <label for="">年齡 : </label>
-        <input type="number" >
+        <input type="number" v-model="this.obj.age">
 
-        <button type="button" @get="">送出</button>
+        <button type="button" @click="this.get()">送出</button>
     </form>
 </div>
 </template>

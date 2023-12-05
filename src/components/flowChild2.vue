@@ -5,13 +5,18 @@ export default{
 
         }
     },
-   props:[
-        "name",
-        "phone",
-        "sex",
-        "address",
-        "age",
-   ]
+    methods:{
+        back(){
+            this.$emit('back')
+        }
+    },
+    props:[
+            "name",
+            "phone",
+            "sex",
+            "address",
+            "age",
+        ]
 }
 </script>
 
@@ -24,6 +29,7 @@ export default{
     <p>性別 : {{this.age}}</p>
     <p>地址 : {{this.address}}</p>
     <p>年齡 : {{this.age}}</p>
+    <button @click="this.back()">返回</button>
 </div>
 </template>
 

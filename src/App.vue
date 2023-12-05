@@ -16,12 +16,12 @@ import Header from "./components/Header.vue"
 <style scoped lang="scss">
 .header{
   width: 100vw;
-  height: 15vh;
+  height: 20vh;
 }
 
 .content{
   width: 100%;
-  height: 85vh;
+  height: 80vh;
   text-align: center;  
 }
 </style>

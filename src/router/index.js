@@ -10,6 +10,11 @@ const router = createRouter({
       component: HomeView
     },
     {
+      path: '/Introduction',
+      name: 'Introduction',
+      component: () => import('../views/Introduction.vue')
+    },
+    {
       path: '/VtestAndVmodel',
       name: 'VtestAndVmodel',
       // route level code-splitting
@@ -56,6 +61,11 @@ const router = createRouter({
       path:'/Emit',
       name:'Emit',
       component: () => import('../views/Emit.vue')
+    },
+    {
+      path:'/ProvideAndInject',
+      name:'ProvideAndInject',
+      component: () => import('../views/ProvideAndInject.vue')
     },
     {
       path:'/DataFlow',

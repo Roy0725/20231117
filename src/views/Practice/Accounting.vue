@@ -12,9 +12,6 @@ export default{
         goSignUp(){
             this.$router.push('/SignUp')
         },
-        // goInterface(){
-        //     this.$router.push('/Interface')
-        // },
         login(){
             const registrations = JSON.parse(localStorage.getItem("registrations")) || [];
 
