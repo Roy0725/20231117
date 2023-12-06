@@ -5,7 +5,7 @@ import counter from '../stores/counter'
 export default{
     data(){
         return{
-
+            arr:["aaa","bbb","ccc"]
         }
     },
     components:{
@@ -13,12 +13,12 @@ export default{
     },
     computed:{
         ...mapState(counter,["location","locationInfo","weatherInfo"]),
+    },
+    methods:{
+        ...mapActions(counter,["getWeather"]),
         goHomeView(){
             this.$router.push('/')
         }
-    },
-    methods:{
-        ...mapActions(counter,["getWeather"])
     }
 }
 </script>
@@ -37,30 +37,40 @@ export default{
         <RouterLink to="/DataFlow" class="routerItem" :class="{'cass':this.location === 10}">DataFlow</RouterLink>
         <RouterLink to="/ProvideAndInject" class="routerItem" :class="{'cass':this.location === 11}">ProvideAndInject</RouterLink>
         <RouterLink to="/Introduction" class="routerItem" :class="{'cass':this.location === 12}">Introduction</RouterLink>
+        <RouterLink to="/RouteFam" class="routerItem" :class="{'cass':this.location === 13}">RouteFam</RouterLink>
         <RouterLink to="/Three" class="routerItem">切版</RouterLink>
-        <RouterLink to="/Accounting" class="routerItem">記帳</RouterLink> -->
+        <RouterLink to="/Accounting" class="routerItem">記帳</RouterLink>
+        <RouterLink  v-for="i in arr" :to="`/User/${i}`" class="routerItem" :class="{'cass':this.location === 13}">User{{ i }}</RouterLink>
 
-        <span>{{ location }}</span>
-        <span>{{ locationInfo }}</span>
+        <div class="location">
+            <span>{{ location }}</span>
+            <span>{{ locationInfo }}</span>
+        </div> -->
 
-        <div class="home">
+        <!-- <div class="home">
             <i @click="goHomeView" class="fa-solid fa-house"></i>
-        </div>
+        </div> -->
     </div>
 <!-- <span>{{ weatherInfo }}</span> -->
 </template>
 
 <style scoped lang="scss">
 .headerShow{
-    width: 100%;
+    // width: 100%;
     height: 10vw;
     background-color: #7ab2f5;
+    position: relative;
+
+    .location{
+        position: absolute;
+        bottom: 0;
+    }
 }
 .home{
     font-size: 36pt;
     position: absolute;
-    top: 5%;
-    left: 35%;
+    top: 25%;
+    left: 40%;
     color: #7c2d12;
     cursor: pointer;
 }

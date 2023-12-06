@@ -4,50 +4,11 @@ import counter from "../stores/counter"
 export default{
     data(){
         return{
-
+            arr:["aaa","bbb","ccc"]
         }
     },
     methods:{
         ...mapActions(counter,["setLocation"]),
-        goVtestAndVmodel(){
-            this.$router.push('/VtestAndVmodel')
-        },
-        goVfor(){
-            this.$router.push('/Vfor')
-        },
-        goVon(){
-            this.$router.push('/Von')
-        },
-        goVbind(){
-            this.$router.push('/Vbind')
-        },
-        goVifAndVshow(){
-            this.$router.push('/VifAndVshow')
-        },
-        goWatchAndComputed(){
-            this.$router.push('/WatchAndComputed')
-        },
-        goProps(){
-            this.$router.push('/Props')
-        },
-        goEmit(){
-            this.$router.push('/Emit')
-        },
-        goDataFlow(){
-            this.$router.push('/DataFlow')
-        },
-        goProvideAndInject(){
-            this.$router.push('/ProvideAndInject')
-        },
-        goIntroduction(){
-            this.$router.push('/Introduction')
-        },
-        goThree(){
-            this.$router.push('/Three')
-        },
-        goAccounting(){
-            this.$router.push('/Accounting')
-        },
     },
     mounted(){
         this.setLocation(1)
@@ -58,7 +19,7 @@ export default{
 <template>
 <div class="container">
 
-    <div class="VtestAndVmodel">
+    <!-- <div class="VtestAndVmodel">
         <a alt="VtestAndVmodel" @click="goVtestAndVmodel">VtestAndVmodel</a>
     </div>
 
@@ -85,6 +46,10 @@ export default{
     <div class="Props">
         <a alt="Props" @click="goProps">Props</a>
     </div>
+    
+    <div class="ProvideAndInject">
+        <a alt="ProvideAndInject" @click="goProvideAndInject">ProvideAndInject</a>
+    </div>
 
     <div class="Emit">
         <a alt="Emit" @click="goEmit">Emit</a>
@@ -93,21 +58,82 @@ export default{
     <div class="DataFlow">
         <a alt="DataFlow" @click="goDataFlow">DataFlow</a>
     </div>
-    <div class="ProvideAndInject">
-        <a alt="ProvideAndInject" @click="goProvideAndInject">ProvideAndInject</a>
+    
+    <div class="Three">
+        <a alt="Three" @click="goThree">Three</a>
     </div>
 
     <div class="Introduction">
         <a alt="Introduction" @click="goIntroduction">Introduction</a>
     </div>
 
-    <div class="Three">
-        <a alt="Three" @click="goThree">Three</a>
-    </div>
-
     <div class="Accounting">
         <a alt="Accounting" @click="goAccounting">Accounting</a>
     </div>
+
+    <div class="User">
+        <a alt="User" @click="goUser">User</a>
+    </div>  -->
+
+        <RouterLink to="/VtestAndVmodel" class="routerLong">
+            <a alt="VtestAndVmodel">VtestAndVmodel</a>
+        </RouterLink>
+
+        <RouterLink to="/Vfor" class="routerShort">
+            <a alt="Vfor">Vfor</a>
+        </RouterLink>
+        <RouterLink to="/Von" class="routerShort">
+            <a alt="Von">Von</a>
+        </RouterLink>
+
+        <RouterLink to="/Vbind" class="routerShort">
+            <a alt="Vbind">Vbind</a>
+        </RouterLink>
+
+        <RouterLink to="/VifAndVshow" class="routerLong">
+            <a alt="VifAndVshow">VifAndVshow</a>
+        </RouterLink>
+
+        <RouterLink to="/WatchAndComputed" class="routerLong">
+            <a alt="WatchAndComputed">WatchAndComputed</a>
+        </RouterLink>
+
+        <RouterLink to="/Props" class="routerShort">
+            <a alt="Props">Props</a>
+        </RouterLink>
+
+        <RouterLink to="/Emit" class="routerShort">
+            <a alt="Emit">Emit</a>
+        </RouterLink>
+
+        <RouterLink to="/DataFlow" class="routerShort">
+            <a alt="DataFlow">DataFlow</a>
+        </RouterLink>
+
+        <RouterLink to="/ProvideAndInject" class="routerLong">
+            <a alt="ProvideAndInject">ProvideAndInject</a>
+        </RouterLink>
+
+        <RouterLink to="/RouteFam" class="routerShort">
+            <a alt="RouteFam">RouteFam</a>
+        </RouterLink>
+
+        <RouterLink to="/Introduction" class="routerLong">
+            <a alt="Introduction">Introduction</a>
+        </RouterLink>
+        
+        <RouterLink to="/Accounting" class="routerLong">
+            <a alt="Accounting">Accounting</a>
+        </RouterLink>
+        
+        <RouterLink to="/Three" class="routerShort">
+            <a alt="Three">Three</a>
+        </RouterLink>
+
+        <RouterLink  v-for="i in arr" :to="`/User/${i}`" class="routerShort">
+            <a alt="User">User{{ i }}</a>
+        </RouterLink>
+
 </div>
 </template>
 
@@ -116,20 +142,19 @@ export default{
     width: 80vw;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
     gap: 1vmin;
-    margin-top: 10vmin;
+    padding: 20vmin;
+    
+
     a{
         font-size: 24pt;
         text-align: center;
         cursor: pointer;
-        // color: rgba(255, 255, 255, 0.3)
-        color:  rgb(150, 102, 102);
+        color:  #D95E37;
         text-decoration: none;
-        // font: 20px Raleway;
-        margin: 0px 10px;
-        padding: 10px 10px;
+        // margin: 0px 10px;
+        padding: 6px 6px;
         position: relative;
         z-index: 0;
 
@@ -137,8 +162,8 @@ export default{
        &::before{
         position: absolute;
         color: #FFF;
-        top: 0px;
-        left: 0px;
+        top: -4px;
+        left: -4px;
         padding: 10px;
         overflow: hidden;
         content: attr(alt);
@@ -152,29 +177,150 @@ export default{
        }
 
     }
-    .VtestAndVmodel{
-        width: 17vw;
-        height: 8vh;
+
+    .routerLong{
+        width: 20vw;
+        height: 10vh;
         border-radius: 5px;
-        background-color: #a3e635;
+        background-color: #3D4490;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .routerShort{
+        width: 10vw;
+        height: 10vh;
+        border-radius: 5px;
+        background-color: #3D4490;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+
+
+    .VtestAndVmodel{
+        width: 20vw;
+        height: 10vh;
+        border-radius: 5px;
+        background-color: #3D4490;
         display: flex;
         justify-content: center;
         align-content: center;
     }
     .Vfor{
         width: 10vw;
-        height: 8vh;
+        height: 10vh;
         border-radius: 5px;
-        background-color: #a3e635;
+        background-color: #3D4490;
         display: flex;
         justify-content: center;
         align-content: center;
     }
     .Von{
         width: 10vw;
-        height: 8vh;
+        height: 10vh;
         border-radius: 5px;
-        background-color: #a3e635;
+        background-color: #3D4490;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+    .Vbind{
+        width: 10vw;
+        height: 10vh;
+        border-radius: 5px;
+        background-color: #3D4490;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+    .VifAndVshow{
+        width: 20vw;
+        height: 10vh;
+        border-radius: 5px;
+        background-color: #3D4490;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+    .WatchAndComputed{
+        width: 20vw;
+        height: 10vh;
+        border-radius: 5px;
+        background-color: #3D4490;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+    .Props{
+        width: 10vw;
+        height: 10vh;
+        border-radius: 5px;
+        background-color: #3D4490;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+    .Emit{
+        width: 10vw;
+        height: 10vh;
+        border-radius: 5px;
+        background-color: #3D4490;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+    .DataFlow{
+        width: 10vw;
+        height: 10vh;
+        border-radius: 5px;
+        background-color: #3D4490;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+    .ProvideAndInject{
+        width: 20vw;
+        height: 10vh;
+        border-radius: 5px;
+        background-color: #3D4490;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+    .Introduction{
+        width: 20vw;
+        height: 10vh;
+        border-radius: 5px;
+        background-color: #3D4490;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+    .Three{
+        width: 10vw;
+        height: 10vh;
+        border-radius: 5px;
+        background-color: #3D4490;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+    .Accounting{
+        width: 20vw;
+        height: 10vh;
+        border-radius: 5px;
+        background-color: #3D4490;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+    .User{
+        width: 10vw;
+        height: 10vh;
+        border-radius: 5px;
+        background-color: #3D4490;
         display: flex;
         justify-content: center;
         align-content: center;

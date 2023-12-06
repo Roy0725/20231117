@@ -8,7 +8,10 @@ export default{
         }
     },
     methods:{
-        ...mapActions(counter,["setLocation"])
+        ...mapActions(counter,["setLocation"]),
+        goHome(){
+            this.$router.push('/')
+        }
     },
     mounted(){
         this.setLocation(12)
@@ -19,13 +22,13 @@ export default{
 <template>
 <div class="header">
     <div class="left">
-        <a href="#">Logo</a>
+        <a alt="Logo" @click="goHome">Logo</a>
     </div>
     <div class="right">
         <ul>
             <li><a href="#">Home</a></li>
-            <li><a href="about">About</a></li>
-            <li><a href="contact">Contact</a></li>
+            <li><a alt="about">About</a></li>
+            <li><a alt="contact">Contact</a></li>
         </ul>
     </div>
 </div>
@@ -33,7 +36,7 @@ export default{
 <div class="background"></div>
 
 <div class="about">
-    <h1>About Me</h1>
+    <!-- <h1>About Me</h1>
     <div class="top">
         <p>自我介紹</p>
     </div>
@@ -42,6 +45,35 @@ export default{
     </div>
     <div class="bottom">
         <p>經歷</p>
+    </div> -->
+    <div class="first">
+        <label> 
+            <input type="checkbox"  />
+                <div class="card">
+                    <div class="front">學歷</div>
+                    <div class="back">Back</div>
+            </div>
+        </label>
+    </div>
+
+    <div class="second">    
+        <label> 
+            <input type="checkbox"  />
+                <div class="card">
+                    <div class="front">學歷</div>
+                    <div class="back">Back</div>
+                </div>
+        </label>
+    </div>
+
+    <div class="third">
+        <label> 
+            <input type="checkbox"  />
+                <div class="card">
+                    <div class="front">學歷</div>
+                    <div class="back">Back</div>
+                </div>
+        </label>
     </div>
 </div>
 
@@ -76,10 +108,49 @@ body{
     background-color: #5b21b6;
 
     .left{
-        padding: 30px 100px;
-        font-size: 30pt;
+        padding: 20px 60px;
+        // font-size: 30pt;
         a{
+            color: #FFF;
             text-decoration: none;
+            font: 50px Raleway;
+            // margin: 0px 10px;
+            // padding: 10px 10px;
+            position: relative;
+            z-index: 0;
+            cursor: pointer;
+
+            &::before,&::after{
+                    content: "";
+                    position: absolute;
+                    top: 30px;
+                    left: 50%;
+                    width: 80px;
+                    height: 80px;
+                    border: 4px solid #0277bd;
+                    transform: translateX(-50%) translateY(-50%) scale(0.8);
+                    border-radius: 50%;
+                    background: transparent;
+                    opacity: 0;
+                    transition: all 0.3s;
+                    z-index: -1;
+                }
+
+            &::after{
+                    content: "";
+                    border-width: 5px;
+                    transition: all 0.4s;
+                }
+
+            &:hover::before{
+                        opacity: 1;
+                        transform: translateX(-50%) translateY(-50%) scale(1);
+                    }
+
+            &:hover::after{
+                        opacity: 1;
+                        transform: translateX(-50%) translateY(-50%) scale(1.3);
+            }
         }
     }
     .right{
@@ -109,11 +180,11 @@ body{
                     left: 0px;
                     top: 0px;
                 }
-                &::before{
+                &::before,&::after{
                     position: absolute;
                     opacity: 0.5;
                     height: 100%;
-                    width: 2px;
+                    width: 5px;
                     content: '';
                     background: #0f172a;
                     transition: all 0.3s;
@@ -123,23 +194,14 @@ body{
                     right: 0px;
                     bottom: 0px;
                 }
-                &::after{
-                    position: absolute;
-                    opacity: 0.5;
-                    height: 100%;
-                    width: 2px;
-                    content: '';
-                    background: #0f172a;
-                    transition: all 0.3s;
-                }
                 &:hover::before{
                     opacity: 1;
-                    height: 2px;
+                    height: 5px;
                     width: 100%;
                 }
                 &:hover::after{
                     opacity: 1;
-                    height: 2px;
+                    height: 5px;
                     width: 100%;
                 }
             }        
@@ -148,6 +210,214 @@ body{
     }
 }
 .about{
+    widows: 100%;
+    height: 600px;
+    position: relative;
+    
+    .first{
+    label {
+        -webkit-perspective: 1000px;
+        perspective: 1000px;
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+        display: block;
+        width: 300px;
+        height: 200px;
+        position: absolute;
+        right: 20%;
+        top: 30%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+    }
+
+    .card {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+        -webkit-transition: all 600ms;
+        transition: all 600ms;
+        z-index: 20;
+    }
+
+    .card div {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: #FFF;
+        text-align: center;
+        line-height: 200px;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        border-radius: 5px;
+    }
+
+    .card .back {
+        background: #222;
+        color: #FFF;
+        -webkit-transform: rotateX(180deg);
+        transform: rotateX(180deg);
+    }
+
+    label:hover .card {
+        -webkit-transform: rotateX(20deg);
+        transform: rotateX(20deg);
+        box-shadow: 0 20px 20px rgba(50,50,50,.2);
+    }
+
+    input {
+        display: none;
+    }
+
+    :checked + .card {
+        transform: rotateX(180deg);
+        -webkit-transform: rotateX(180deg);
+    }
+
+    label:hover :checked + .card {
+        transform: rotateX(160deg);
+        -webkit-transform: rotateX(160deg);
+        box-shadow: 0 20px 20px rgba(255,255,255,.2);
+    }
+}
+    .second{
+    label {
+        -webkit-perspective: 1000px;
+        perspective: 1000px;
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+        display: block;
+        width: 300px;
+        height: 200px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+    }
+
+    .card {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+        -webkit-transition: all 600ms;
+        transition: all 600ms;
+        z-index: 20;
+    }
+
+    .card div {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: #FFF;
+        text-align: center;
+        line-height: 200px;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        border-radius: 5px;
+    }
+
+    .card .back {
+        background: #222;
+        color: #FFF;
+        -webkit-transform: rotateX(180deg);
+        transform: rotateX(180deg);
+    }
+
+    label:hover .card {
+        -webkit-transform: rotateX(20deg);
+        transform: rotateX(20deg);
+        box-shadow: 0 20px 20px rgba(50,50,50,.2);
+    }
+
+    input {
+        display: none;
+    }
+
+    :checked + .card {
+        transform: rotateX(180deg);
+        -webkit-transform: rotateX(180deg);
+    }
+
+    label:hover :checked + .card {
+        transform: rotateX(160deg);
+        -webkit-transform: rotateX(160deg);
+        box-shadow: 0 20px 20px rgba(255,255,255,.2);
+    }
+}
+    .third{
+    label {
+        -webkit-perspective: 1000px;
+        perspective: 1000px;
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+        display: block;
+        width: 300px;
+        height: 200px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+    }
+
+    .card {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+        -webkit-transition: all 600ms;
+        transition: all 600ms;
+        z-index: 20;
+    }
+
+    .card div {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: #FFF;
+        text-align: center;
+        line-height: 200px;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        border-radius: 5px;
+    }
+
+    .card .back {
+        background: #222;
+        color: #FFF;
+        -webkit-transform: rotateX(180deg);
+        transform: rotateX(180deg);
+    }
+
+    label:hover .card {
+        -webkit-transform: rotateX(20deg);
+        transform: rotateX(20deg);
+        box-shadow: 0 20px 20px rgba(50,50,50,.2);
+    }
+
+    input {
+        display: none;
+    }
+
+    :checked + .card {
+        transform: rotateX(180deg);
+        -webkit-transform: rotateX(180deg);
+    }
+
+    label:hover :checked + .card {
+        transform: rotateX(160deg);
+        -webkit-transform: rotateX(160deg);
+        box-shadow: 0 20px 20px rgba(255,255,255,.2);
+    }
+}
 }
 .contact{
     width: 20%;
@@ -168,15 +438,15 @@ body{
     color: whitesmoke;
 }
 .floor{
-    background-color: #5b21b6;
-    height: 80px;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    p{
-        margin-top: 1.5%;
-        font-size: 18pt;
-        color: whitesmoke;
-    }
+    // background-color: #5b21b6;
+    // height: 80px;
+    // position: fixed;
+    // bottom: 0;
+    // width: 100%;
+    // p{
+    //     margin-top: 1.5%;
+    //     font-size: 18pt;
+    //     color: whitesmoke;
+    // }
 }
 </style>
