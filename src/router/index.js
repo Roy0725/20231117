@@ -73,6 +73,11 @@ const router = createRouter({
       component: () => import("../views/DataFlow.vue"),
     },
     {
+      path: "/Vslot",
+      name: "Vslot",
+      component: () => import("../views/Vslot.vue"),
+    },
+    {
       path: "/Accounting",
       name: "Accounting",
       component: () => import("../views/Practice/Accounting.vue"),

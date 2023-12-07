@@ -47,16 +47,30 @@ export default{
 </template>
 
 <style scoped lang="scss">
-.header{
-  width: 100vw;
-  height: 20vh;
+// .header{
+//   width: 100vw;
+//   height: 20vh;
+// }
+
+html{
+  height: 100%;
+  overflow: hidden;
+}
+
+body{
+    margin: 0;
+    padding:0;
+	  perspective: 1px;
+	  transform-style: preserve-3d;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .content{
   width: 100%;
   height: 100vh;
   text-align: center;
-  // background-color: #1e293b;
   overflow: auto;
 }
 
@@ -65,9 +79,10 @@ export default{
     position: fixed;
     bottom: 20%;
     right: 5%;
-    color: #134e4a;
+    color: #181991;
     cursor: pointer;
     opacity: 0;
+    z-index: 1;
 
     &:hover{
     transition: all 0.3s;
@@ -82,6 +97,7 @@ export default{
   bottom: 10%;
   right: 5%;
   opacity: 0;
+  z-index: 1;
 
   &:hover{
     transition: all 0.3s;

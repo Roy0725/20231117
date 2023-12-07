@@ -130,6 +130,10 @@ export default{
             <a alt="Three">Three</a>
         </RouterLink>
 
+        <RouterLink to="/Vslot" class="routerShort">
+            <a alt="Vslot">Vslot</a>
+        </RouterLink>
+
         <RouterLink  v-for="i in arr" :to="`/User/${i}`" class="routerShort">
             <a alt="User">User{{ i }}</a>
         </RouterLink>
